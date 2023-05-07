@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_modular/flutter_modular.dart';
 import 'package:localization/localization.dart';
 
-import '../../viewmodel/login_viewmodel.dart';
+import '../../viewmodel/login_viewmodel/login_viewmodel.dart';
 
 class LoginPage extends StatefulWidget {
   const LoginPage({Key? key}) : super(key: key);
@@ -18,9 +18,10 @@ class _LoginPageState extends State<LoginPage> {
   final _formKey = GlobalKey<FormState>();
   final _viewModel = Modular.get<LoginViewModel>();
 
+  @override
   Widget build(BuildContext context) {
   return Scaffold(
-    backgroundColor: const Color.fromARGB(255, 245, 239, 222),
+    backgroundColor: const Color.fromARGB(255, 1, 4, 34),
     body: Center(
       child: SingleChildScrollView(
         padding: const EdgeInsets.all(16),
@@ -31,7 +32,7 @@ class _LoginPageState extends State<LoginPage> {
             children: [
                Center(
                 child: Text(
-                  'idioma'.i18n(),
+                  'app_name'.i18n(),
                   style: const TextStyle(
                     height: -15,
                     fontSize: 15,
@@ -64,14 +65,14 @@ class _LoginPageState extends State<LoginPage> {
                 ),
               ),
               const SizedBox(height: 20),
-              const ElevatedButton(
-                onPressed: null,
-                style: ButtonStyle(
+              ElevatedButton(
+                onPressed: () => {Navigator.pushNamed(context, '/home')},
+                style: const ButtonStyle(
                   backgroundColor: MaterialStatePropertyAll(
                     Color.fromRGBO(70, 70, 60, 1),
                   ),
                 ),
-                child: Text('Entrar'),
+                child: const Text('Entrar'),
               ),
               const ElevatedButton(
                 onPressed: null,
@@ -80,16 +81,16 @@ class _LoginPageState extends State<LoginPage> {
                     Colors.transparent,
                   ),
                 ),
-                child: Text('Recuperar Senha',style: TextStyle(color: Colors.black),),
+                child: Text('Recuperar Senha',style: TextStyle(color: Color.fromARGB(255, 223, 216, 216)),),
               ),
                ElevatedButton(
-                onPressed: () async => {Navigator.pushNamed(context, 'registro')},
+                onPressed: () async => {Navigator.pushNamed(context, '/signup')},
                 style: const ButtonStyle(shadowColor: MaterialStatePropertyAll(Colors.transparent),
                   backgroundColor: MaterialStatePropertyAll(
                     Colors.transparent,
                   ),
                 ),
-                child: const Text('Registre-se',style: TextStyle(color: Colors.black),),
+                child: const Text('Registre-se',style: TextStyle(color: Color.fromARGB(255, 223, 216, 216)),),
               ),
             ],
           ),

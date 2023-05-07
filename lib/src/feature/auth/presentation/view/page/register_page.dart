@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_modular/flutter_modular.dart';
 import 'package:localization/localization.dart';
 
-import '../../viewmodel/login_viewmodel.dart';
+import '../../viewmodel/login_viewmodel/login_viewmodel.dart';
 
 class RegisterPage extends StatefulWidget {
   const RegisterPage({Key? key}) : super(key: key);
@@ -20,9 +20,10 @@ class _RegisterPageState extends State<RegisterPage> {
   final _formKey = GlobalKey<FormState>();
   final _viewModel = Modular.get<LoginViewModel>();
 
+  @override
   Widget build(BuildContext context) {
   return Scaffold(
-    backgroundColor: const Color.fromARGB(255, 245, 239, 222),
+    backgroundColor: const Color.fromARGB(255, 1, 4, 34),
     body: Center(
       child: SingleChildScrollView(
         padding: const EdgeInsets.all(16),
@@ -33,7 +34,7 @@ class _RegisterPageState extends State<RegisterPage> {
             children: [
                Center(
                 child: Text(
-                  'idioma'.i18n(),
+                  'app_name'.i18n(),
                   style: const TextStyle(
                     height: -11,
                     fontSize: 15,
@@ -90,18 +91,18 @@ class _RegisterPageState extends State<RegisterPage> {
                 ),
               ),
               const SizedBox(height: 20),
-              const ElevatedButton(
-                onPressed: null,
-                style: ButtonStyle(
+              ElevatedButton(
+                onPressed:  () async => {Navigator.pushNamed(context, '/home')},
+                style: const  ButtonStyle(
                   backgroundColor: MaterialStatePropertyAll(
                     Color.fromRGBO(70, 70, 60, 1),
                   ),
                 ),
-                child: Text('Registrar',style: TextStyle(color: Colors.black),),
+                child: const Text('Registrar',style: TextStyle(color: Color.fromARGB(255, 223, 216, 216)),),
               ),
                Center(
                 child: Text(
-                  'Menssagem'.i18n(),
+                  'signup'.i18n(),
                   style: const TextStyle(
                     height: 0,
                     fontSize: 15,
@@ -109,14 +110,15 @@ class _RegisterPageState extends State<RegisterPage> {
                   ),
                 ),
               ),
-               ElevatedButton(
-                onPressed: () async => {Navigator.pushNamed(context, '/')},
-                style: const ButtonStyle(shadowColor: MaterialStatePropertyAll(Colors.transparent),
+               const ElevatedButton(
+                //onPressed: () async => {Navigator.pushNamed(context, '/home')},
+                onPressed: null,
+                style:  ButtonStyle(shadowColor: MaterialStatePropertyAll(Colors.transparent),
                   backgroundColor: MaterialStatePropertyAll(
                     Colors.transparent,
                   ),
                 ),
-                child: const Text('Entrar',style: TextStyle(color: Colors.black),),
+                child: Text('Entrar',style: TextStyle(color: Color.fromARGB(255, 223, 216, 216)),),
               ),
             ],
           ),

@@ -1,5 +1,5 @@
 import 'package:cineverse_app/src/feature/auth/presentation/view/page/loginpage.dart';
-import 'package:cineverse_app/src/feature/auth/presentation/viewmodel/login_viewmodel.dart';
+import 'package:cineverse_app/src/feature/auth/presentation/viewmodel/login_viewmodel/login_viewmodel.dart';
 
 import 'package:flutter_modular/flutter_modular.dart';
 
