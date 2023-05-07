@@ -7,7 +7,7 @@ import '../widget/reels.dart';
 
 
 
-class HomePage extends StatefulWidget {
+class HomePage  extends StatefulWidget {
   const HomePage({super.key});
 
   @override
@@ -15,7 +15,7 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
-  int _selectIndex = 0;
+  int _selectIndex =  0;
 
   static const List<Widget> _pages = [
     UserHome(),
