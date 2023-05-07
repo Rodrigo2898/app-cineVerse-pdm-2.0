@@ -1,11 +1,10 @@
+import 'package:cineverse_app/src/feature/auth/data/repository/login_repository.dart';
 import 'package:flutter_modular/flutter_modular.dart';
 import 'package:localization/localization.dart';
-
 import 'package:cineverse_app/src/feature/auth/domain/model/user.dart';
-import '../repository/login_interface.dart';
 
 class LoginUseCase {
-  final repository = Modular.get<ILogin>();
+  final repository = Modular.get<LoginRepository>();
 
   String? validateUsername(String username) {
     if (username.isEmpty) {
