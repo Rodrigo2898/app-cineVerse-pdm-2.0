@@ -7,7 +7,7 @@ class UserPost extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold (
-      backgroundColor:  const Color.fromARGB(255, 20, 5, 77),
+      //backgroundColor:  const Color.fromARGB(255, 20, 5, 77),
       appBar: MinhaAppBar(
         title: const Text("TESTANDO 123"),
       ),

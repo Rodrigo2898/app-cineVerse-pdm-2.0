@@ -47,7 +47,7 @@ class _LoginPageState extends State<LoginPage> {
                   decoration: const InputDecoration(
                     border: InputBorder.none,
                     filled: true,
-                    fillColor: Color.fromRGBO(175, 175, 153, 1),
+                    fillColor:  Color.fromRGBO(83, 104, 141, 1),
                     hintText: 'email',
                   ),
                 ),
@@ -59,7 +59,7 @@ class _LoginPageState extends State<LoginPage> {
                   decoration: const InputDecoration(
                     border: InputBorder.none,
                     filled: true,
-                    fillColor: Color.fromRGBO(175, 175, 153, 1),
+                    fillColor: Color.fromRGBO(83, 104, 141, 1),
                     hintText: 'senha',
                   ),
                 ),
@@ -69,7 +69,7 @@ class _LoginPageState extends State<LoginPage> {
                 onPressed: () => {Navigator.pushNamed(context, '/home')},
                 style: const ButtonStyle(
                   backgroundColor: MaterialStatePropertyAll(
-                    Color.fromRGBO(70, 70, 60, 1),
+                    Color.fromARGB(255, 53, 79, 122),
                   ),
                 ),
                 child: const Text('Entrar'),
@@ -84,7 +84,7 @@ class _LoginPageState extends State<LoginPage> {
                 child: Text('Recuperar Senha',style: TextStyle(color: Color.fromARGB(255, 223, 216, 216)),),
               ),
                ElevatedButton(
-                onPressed: () async => {Navigator.pushNamed(context, '/signup')},
+                onPressed: () async => {Navigator.pushNamed(context, 'signup')},
                 style: const ButtonStyle(shadowColor: MaterialStatePropertyAll(Colors.transparent),
                   backgroundColor: MaterialStatePropertyAll(
                     Colors.transparent,

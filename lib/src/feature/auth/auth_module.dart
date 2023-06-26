@@ -19,10 +19,6 @@ class AuthModule extends Module{
         Bind.factory((i) => SignUpViewModel()),
         Bind.factory((i) => SignUpUserCase()),
         Bind.factory((i) => SignUpRepository()),
-        //Bind.factory((i) => ForgotPasswordViewModel()),
-        //Bind.factory((i) => ForgotPasswordUseCase()),
-        //Bind.factory((i) => ForgotPasswordRepository()),
-
   ];
 
   @override

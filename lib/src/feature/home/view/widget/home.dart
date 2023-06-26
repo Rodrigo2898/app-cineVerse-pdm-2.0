@@ -34,8 +34,8 @@ class UserHome extends StatelessWidget {
             child: Text(
               'app_name'.i18n(),
               style: const TextStyle(
-                color: Color.fromARGB(255, 117, 113, 101),
-                fontSize: 35,
+                color: Color.fromARGB(255, 195, 188, 167),
+                fontSize: 30,
               ),        
             ),
           ),
@@ -134,7 +134,7 @@ class UserHome extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: const Color.fromARGB(255, 20, 5, 77),
+      //backgroundColor: const Color.fromARGB(255, 20, 5, 77),
       appBar: _appBar(context),
       body: listOfPublis(),
     );

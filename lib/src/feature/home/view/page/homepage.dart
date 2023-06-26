@@ -33,10 +33,10 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: const Color.fromARGB(255, 52, 5, 5),
+      //backgroundColor: const Color.fromARGB(255, 52, 5, 5),
       body: _pages[_selectIndex],
       bottomNavigationBar: BottomNavigationBar(
-        backgroundColor:  const Color.fromARGB(255, 20, 5, 77),
+        backgroundColor:  Colors.transparent,
         currentIndex: _selectIndex,
         type: BottomNavigationBarType.fixed,
         showSelectedLabels: false,
