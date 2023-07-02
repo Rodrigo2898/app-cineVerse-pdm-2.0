@@ -1,4 +1,4 @@
-import 'package:cineverse_app/assets/mock_data/dummy_data.dart';
+import 'package:cineverse_app/src/feature/home/repository/mock_data/dummy_data.dart';
 import 'package:cineverse_app/src/feature/home/repository/model/movie_model.dart';
 import 'package:flutter/material.dart';
 

@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import '../widget/account.dart';
 import '../widget/home.dart';
 import '../widget/post.dart';
-import '../widget/reels.dart';
+import '../widget/movies_page.dart';
 
 
 
@@ -20,7 +20,7 @@ class _HomePageState extends State<HomePage> {
   static const List<Widget> _pages = [
     UserHome(),
     UserPost(),
-    UserReels(),
+    MoviesPage(),
     UserAccount(),
   ];
 

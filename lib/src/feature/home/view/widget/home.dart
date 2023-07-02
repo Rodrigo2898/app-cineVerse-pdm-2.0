@@ -1,3 +1,4 @@
+import 'package:cineverse_app/src/feature/home/repository/mock_data/dummy_movie_post_data.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:localization/localization.dart';
@@ -58,6 +59,20 @@ class UserHome extends StatelessWidget {
     );
   }
 
+  Widget listOfTweets() {
+    return Container(
+      color: Colors.white,
+      child: ListView.separated(
+        itemBuilder: (BuildContext context, int index) {
+          return moviePosts[index];
+        },
+        separatorBuilder: (BuildContext context, int index) => const Divider(
+          height: 0,
+        ),
+        itemCount: moviePosts.length,
+      ),
+    );
+  }
 
   Widget listOfPublis() {
     return Row(
@@ -136,7 +151,7 @@ class UserHome extends StatelessWidget {
     return Scaffold(
       //backgroundColor: const Color.fromARGB(255, 20, 5, 77),
       appBar: _appBar(context),
-      body: listOfPublis(),
+      body: listOfTweets(),
     );
   }
 }

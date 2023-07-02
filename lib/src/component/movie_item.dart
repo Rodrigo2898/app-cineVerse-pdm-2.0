@@ -36,12 +36,12 @@ class MovieItem extends StatelessWidget {
             movie.imageUrl,
             fit: BoxFit.cover,
           ),
-          /*onTap: () {
+          onTap: () {
             Navigator.of(context).pushNamed(
-              AppRoutes.PRODUCT_DETAIL,
+              '/home',
               arguments: movie,
             );
-          },*/
+          },
         ),
       ),
     );

@@ -15,9 +15,9 @@ class AppWidget extends StatelessWidget {
       themeMode: ThemeMode.dark,
       darkTheme: ThemeData(
         brightness: Brightness.dark,
-        scaffoldBackgroundColor: Colors.black,
+        scaffoldBackgroundColor: const Color.fromARGB(255, 1, 4, 34),
         bottomNavigationBarTheme: const BottomNavigationBarThemeData(
-          backgroundColor: Colors.black,
+          backgroundColor: Color.fromARGB(255, 1, 4, 34),
           selectedItemColor: Colors.white,
           unselectedItemColor: Colors.white38, 
         ),
