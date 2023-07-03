@@ -12,11 +12,38 @@ class LoginPage extends StatefulWidget {
 }
 
 class _LoginPageState extends State<LoginPage> {
-  bool obscureText = true;
   final _emailController = TextEditingController();
   final _passwordController = TextEditingController();
   final _formKey = GlobalKey<FormState>();
   final _viewModel = Modular.get<LoginViewModel>();
+
+  
+String? _validateEmail(String? value) {
+    if (value == null || value.isEmpty) {
+      return "E-mail obrigatório";
+    }
+    if (!value.contains("@")) {
+      return "E-mail inválido";
+    }
+    return null;
+  }
+
+  String? _validatePassword(String? value) {
+    if (value == null || value.isEmpty) {
+      return "Senha obrigatória";
+    }
+    if (value.length < 8) {
+      return "Senha deve ter no mínimo 8 caracteres";
+    }
+    return null;
+  }
+
+  void _handleSubmit() {
+    if (!_formKey.currentState!.validate()) {
+      return;
+    }
+    Navigator.pushReplacementNamed(context, "/home");
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -28,6 +55,7 @@ class _LoginPageState extends State<LoginPage> {
         child: Form(
           key: _formKey,
           child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
             crossAxisAlignment: CrossAxisAlignment.stretch,
             children: [
                Center(
@@ -42,8 +70,10 @@ class _LoginPageState extends State<LoginPage> {
               ),
                Padding(
                 padding: const EdgeInsets.all(8.0),
-                child: TextField(
+                child: TextFormField(
                   controller: _emailController,
+                  validator: _validateEmail,
+                  keyboardType: TextInputType.emailAddress,
                   decoration: const InputDecoration(
                     border: InputBorder.none,
                     filled: true,
@@ -54,19 +84,21 @@ class _LoginPageState extends State<LoginPage> {
               ),
               Padding(
                 padding: const EdgeInsets.all(8.0),
-                child: TextField(
+                child: TextFormField(
                   controller: _passwordController,
+                  validator: _validatePassword,
                   decoration: const InputDecoration(
                     border: InputBorder.none,
                     filled: true,
                     fillColor: Color.fromRGBO(83, 104, 141, 1),
                     hintText: 'senha',
                   ),
+                  obscureText: true,
                 ),
               ),
               const SizedBox(height: 20),
               ElevatedButton(
-                onPressed: () => {Navigator.pushNamed(context, '/home')},
+                onPressed: () => {_handleSubmit()},
                 style: const ButtonStyle(
                   backgroundColor: MaterialStatePropertyAll(
                     Color.fromARGB(255, 53, 79, 122),
